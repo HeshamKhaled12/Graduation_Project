@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Detection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+
+</head>
+<body>
+    <nav id="navbar-example" class="navbar navbar-expand-lg my-nav fixed-top">
+        <div class="container">
+          <a class="navbar-brand logo" href="#">Drones Detection</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-1 mb-lg-0 pt-3 pb-3">
+              <li class="nav-item pe-3">
+                <a class="nav-link active " aria-current="page" href="#home">Home</a>
+              </li>
+              <li class="nav-item pe-3">
+                <a class="nav-link  " href="#about">About</a>
+              </li>
+              <li class="nav-item pe-3">
+                <a class="nav-link " href="#drones">Drones</a>
+              </li>
+              <li class="nav-item pe-3">
+                <a class="nav-link " href="#gallery">Gallery</a>
+              </li>
+              <li class="nav-item pe-3">
+                <a class="nav-link " href="#contact">Contact</a>
+              </li>
+          
+       
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+    <main>
+        <header class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h1 class="hero-title">DRONE</h1>
+                        <h1 class="hero-title">DETECTION</h1>
+                        <div class="hero-line"></div>
+                        <div class="buttons">
+                            <a href="{{ url_for('predict') }}" class="btn btn-primary model-btn">ENTER A MODEL</a>
+                            <a href="#about" class="btn btn-outline-light learn-btn">LEARN MORE</a>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img src="{{ url_for('static', filename='images/drn.jpg') }}" alt="Drone Image" class="img-fluid hero-img">
+                    </div>
+                </div>
+            </div>
+            
+        </header>
+        <section id="about" class="About py-4">
+            <div class="container my-5">
+                <div class="row align-items-center">
+                    
+                    <div class="col-md-6">
+                        <img src="{{ url_for('static', filename='images/sec2.jpg') }}" alt="Drone Image" class="img-fluid hero-img">
+                    </div>
+                    
+                    <div class="col-md-6 text-light">
+                        <h2 class="section-title">ABOUT DRONES</h2>
+                        <hr class="title-underline">
+                        <p class="section-text">
+                            Striker Drones is your opportunity to rent drones in California at competitive prices. 
+                            Here you will find the widest selection of drones. Expand your horizons with drones from the best brands.
+                        </p>
+                        <p class="section-text">
+                            We offer drones for any photo and video shooting in 4K quality. In addition, here you can rent drones for 
+                            permanent tracking of a moving object. Striker Drones offers different models of devices with different 
+                            ranges of signal reception distance - from several tens of meters to 6.5 kilometers.
+                        </p>
+            
+                        
+                        <div class="row stats">
+                            <div class="col-4">
+                                <h3 class="stat-number">58</h3>
+                                <p class="stat-text">Drones Available</p>
+                            </div>
+                            <div class="col-4">
+                                <h3 class="stat-number">19</h3>
+                                <p class="stat-text">Drone Models</p>
+                            </div>
+                            <div class="col-4">
+                                <h3 class="stat-number">2000</h3>
+                                <p class="stat-text">Clients in 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </section>
+        
+    </main>
+    <button id="chatbot-btn">💬 Chat</button>
+
+    <!-- صندوق الشات -->
+    <div id="chatbox" class="hidden">
+        <div class="chat-header">
+            <h3>Drone Chatbot</h3>
+            <button id="close-chat">X</button>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <p class="bot-message">Hello! How can I help you?</p>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    
+</body>
+</html>
